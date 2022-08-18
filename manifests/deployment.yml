@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: vamsiprocesspension 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vamsiprocesspension
+  template:
+    metadata:
+      labels:
+        app: vamsiprocesspension 
+    spec:
+      containers:
+        - name: vamsiprocesspension 
+          image: pmsregistery.azurecr.io/vamsiprocesspension
+          ports:
+          - containerPort: 80
